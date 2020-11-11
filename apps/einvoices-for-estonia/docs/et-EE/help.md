@@ -10,8 +10,8 @@ Eesti e-arve lahendus võimaldab teil vahetada e-arveid oma äripartneritega. Ee
   - [Andmevahetustegevuste logi](#andmevahetustegevuste-logi)
   - [E-arvete vastuvõtmine](#e-arvete-vastuvõtmine)
   - [E-arvete salvestamine ostuarveks](#e-arvete-salvestamine-ostuarveks)
-  - [E-arvete väljastamine](#e-arvete-väljastamine)
-  - [PR kontode ja dimensioonide väljastamine](#pr-kontode-ja-dimensioonide-väljastamine)
+  - [E-arvete saatmine](#e-arvete-väljastamine)
+  - [Põhiandmete saatmine Omnivasse](#põhiandmete-saatmine-omnivasse)
 
 ## Teenuse seadistamine
 
@@ -32,7 +32,7 @@ Kasutajanimi  (Fiteki puhul) | Täpsustage Fitek’ist.
 Parool  (Fiteki puhul) | Täpsustage Fitek’ist.
 **Dokumendid**  (Omniva puhul) | 
 Võta arved muudetud alates | Dokumendivahetuse sisemine järjehoida. Mittemuudetav.
-Võta arved, mis on | Määrab, kas arved laetakse NAV-i kohe peale nende saabumist või alles peale nende töötlemist Omniva arvehalduses.
+Võta arved, mis on | Määrab, millise olekuga ostuarved laetakse BC-sse: <br> a) Töödeldud - st peale nende töötlemist Omniva arvehalduses. <br> b) Vastu võetud - st kohe peale arve saabumist Omnivasse. <br> c) Kinnitatud - st peale arve kinnitamist Omnivas.
 Võta arve manused | Määrab, kas võetakse e-arvega kaasasolevad manused. „Põhimanus“ on üljuhul arve PDF kujul.
 
 Ühenduse testimiseks kasutage tegevust **Testi ühendust**.
@@ -45,6 +45,7 @@ Andmevahetuse töö | Selgitus
 - | -
 Saada PR kontod | Saadab PR kontod, millel on märge **Saada Omnivasse**.
 Saada dimensioonid | Saadab dimensioonid, millel on märge **Saada Omnivasse**.
+Saada hankijad ja kliendid | Saadab hankijad ja kliendid, millel on märge **Saada Omnivasse**.
 Võta ostuarved | Võtab operaatori serverist ostuarved ning salvestab need tabelisse Sissetulevad dokumendid.
 Saada kont. ostuarvete nr. | Saadab konteeritud ostuarve numbri Omnivast tulnud sissetulevatele dokumentidele.
 Saada järjek. müügiarved | Saadab müügiarved, mille **E-arve olek** on „Ootab saatmist“ või „Saatmise tõrge“. Kliendil peab olema **Dokumendi saatmise profiil**, millel on seadistatud **Eesti e-arve**.
@@ -57,8 +58,8 @@ Kõik andmevahetuse tegevused logitakse. Tõrgete korral aitavad need teid probl
 
 Andmekirje / Leht | Andmevahetustegevus
 - | -
-Omniva (/Fitek) dokumendivahetusteenuse seadistus | -Kontoplaani ja dimensioonide saatmine -Ostuarvete paketi vastuvõtmine
-Sissetulev dokument | -Ostuarvega seotud manuste vastuvõtmine -Konteeritud ostuarve nr. saatmine
+Omniva (/Fitek) dokumendivahetusteenuse seadistus | -Kontoplaani ja dimensioonide saatmine <br> -Hankijate ja klientide saatmine <br> -Ostuarvete paketi vastuvõtmine
+Sissetulev dokument | -Ostuarvega seotud manuste vastuvõtmine <br> -Konteeritud ostuarve nr. saatmine
 Konteeritud müügiarve ( või kreeditarve) | -Müügiarve saatmine
 
 Logi sissekannete vaatamiseks klikkige seadistusel või dokumendil **Tegevuse logi**.
@@ -82,10 +83,10 @@ Kui tegevus ebaõnnestus, siis vaadake **Sissetuleva dokumendi** kiirkaarti **T�
 
 E-arvest ostuarve loomisel kasutatakse järgnevaid vastendusreegleid:
 
-1.  Hankija tuvastatakse **Registreerimisnumbri** alusel. Hankija puudumisel on võimalus hankija automaatselt luua aga see ei ole soovituslik.
+1.  Hankija tuvastatakse **Registreerimisnumbri** alusel. Hankija puudumisel on võimalus hankija automaatselt luua (eeldusel, et Riigid/regioonid tabelis on seadistatud Uue hankija mall) aga see ei ole soovituslik.
 2.  Kulukontod ja dimensioonid võetakse e-arvest juhul, kui need on seal olemas – st. konteerimine on tehtud operaatori arvehalduskeskkonnas.
 3.  Kui konto e-arvel puudub, siis kasutatakse **Vastenda tekst kontoks** funktsionaalsust, kust kõigepealt otsitakse e-arve rea kirjeldusele vastavat seadistust ning, kui seda ei leita, siis hankija nimele vastavat seadistust. **NB! Vastendamises on lubatud filtri kujul seadistused.**
-4.  Viimases järjekorras kasutatakse **Ostu ja ostuv. seadistus** lehel kiirkaardil **Andmevahetus** kirjeldatud vaikekontosid.
+4.  Viimases järjekorras kasutatakse **Ostu ja ostuv. seadistus** lehel kiirkaardil **Vaikekontod** kirjeldatud vaikekontosid.
 
   
 
@@ -123,7 +124,7 @@ Töö saadab arveid, mis vastavad järgnevatele tingimustele:
 Juhul, kui arve saatmisel on tõrge, mida ei ole võimalik lahendada, siis on soovitav peatada arve saatmiskatsed. Selleks klikkige arve väljal **E-arve olek**, mis avab andmevahetustegevuste logi. Logi sulgemisel saate valida, kas soovite saatmise peatada.
  
 
-## PR kontode ja dimensioonide väljastamine
+## Põhiandmete saatmine Omnivasse
 
 **PR konto** kaardil ja lehel **Dimensioonid** on väli **Saada Omnivasse**. Märkige see neile kontodele ja dimensioonidele, mida soovite Omnivasse edastada. Andmete saatmiseks ühekordselt avage **Omniva dokumendivahetusteenuse seadistus** ning käivitage tegevused **Saada PR kontod** ja **Saada dimensioonid**. Andmeid saadetakse perioodiliselt, kui teil on seadistatud ja töötavad vastavad tööjärjekorra kanded.
 
