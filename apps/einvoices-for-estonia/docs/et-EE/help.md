@@ -94,10 +94,10 @@ E-arvest ostuarve loomisel kasutatakse järgnevaid vastendusreegleid:
 a) Ostja kaubakood (BC kauba nr.) <br>
 b) EAN (esmalt GTIN kauba kaardil, seejärel vöötkood ristviidetes) <br>
 c) Müüja kauba kood (ristviidetes)
-3. **KM toote konteeringurühm** võetakse e-arvelt ning selle puudumisel määrab süsteem esimese KM toote konteeringurühma (kombinatsioonis hankija pealt tuleva KM äri konteeringurühmaga), millel on sama KM %.
-4. **Kulukontod ja dimensioonid** võetakse e-arvest juhul, kui need on seal olemas – st. konteerimine on tehtud operaatori arvehalduskeskkonnas.
-5. Kui konto e-arvel puudub, siis kasutatakse **Vastenda tekst kontoks** funktsionaalsust, kust kõigepealt otsitakse e-arve rea täpsele kirjeldusele vastet ning kui seda ei leita, siis hankija nimele vastavat seadistust. **NB! Vastendamises on lubatud filtri kujul seadistused.**
-6. Viimases järjekorras kasutatakse **Ostu ja ostuv. seadistus** lehel, **Vaikekontod** kiirkaardil määratud vaikekontosid.
+3. **Kulukontod ja dimensioonid** võetakse e-arvest juhul, kui need on seal olemas – st. konteerimine on tehtud operaatori arvehalduskeskkonnas.
+4. Kui konto e-arvel puudub, siis kasutatakse **Vastenda tekst kontoks** funktsionaalsust, kust kõigepealt otsitakse e-arve rea täpsele kirjeldusele vastet ning kui seda ei leita, siis hankija nimele vastavat seadistust. **NB! Vastendamises on lubatud filtri kujul seadistused.**
+5. Viimases järjekorras kasutatakse **Ostu ja ostuv. seadistus** lehel, **Vaikekontod** kiirkaardil määratud vaikekontosid.
+6. **KM toote konteeringurühm** võetakse e-arvelt (juhul, kui see on seal olemas). Viimase puudumisel kasutatakse leitud kauba või PR konto vastavat määrangut. <br> NB! Kui e-arvel on väiksem KM %, kui kauba või PR konto KM toote konteeringurühmal, leiab süsteem esimese KM toote konteeringurühma (*kombinatsioonis hankija pealt tuleva KM äri konteeringurühmaga*), millel on sama KM % kui e-arve real, ning kasutab seda.
 
 <br>
 
