@@ -88,12 +88,12 @@ To automatically create a purchase document from an incoming document You can cr
 
 The following mapping rules are used when **Purchase Invoice** is created from e-invoice:
 
-1. Vendor is identified by **Registration No.** If vendor is not found it can be created automatically (*if New Vendor Template is specified in Countries/Regions table*), but using this feature is not recommended.
-2. **Items** are identified in the following order: <br> 
-a) Buyer Item No. (BC Item No.) <br>
-b) EAN (firstly GTIN on item, then barcode from cross reference) <br>
-c) Seller Item No. (from cross reference)
-3. G/L Account and dimensions are taken from the e-invoice if they are available – this means posting has been done in operator invoice management system.
+1. Vendor is identified by **Registration No.** <br> If vendor is not found it can be created automatically (*if New Vendor Template is specified in Countries/Regions table*), but using this feature is not recommended.
+2. **Items** are identified only if  **Activate Find Items** is activated on **Purchases & Payables Setup**. <br>
+Items are identified using the following order: <br> 
+a) EAN (firstly GTIN on item, then barcode from cross reference) <br>
+b) Seller Item No. (firstly from cross reference, then from BC Item No.) <br>
+3. G/L Account and dimensions are taken from the e-invoice if they are available – this means preposting has been done in operator invoice management system.
 4. If the G/L account is not found on the e-invoice line, then **Map text to Account** functionality is used. Mapping is searched for the e-invoice line description and if not found then for the vendor name. **NB! Using filters is allowed in Text-to-Account Mapping page.**
 5. Finally, the default accounts are used from the **Default Accounts** fast tab of the **Purchases & Payables Setup**.
 6. **VAT Prod. Posting Group** is taken from e-invoice (if it exists). If it's not on e-invoice then a VAT Prod. Posting Group that's specified on Item or G/L Account is used. <br> Note! If VAT % on e-invoice line is smaller then on purchase invoice line, then system finds and uses a first suitable VAT Prod. Posting Group with a matching VAT % (*in combination with VAT Bus. Posting Group from Vendor*).

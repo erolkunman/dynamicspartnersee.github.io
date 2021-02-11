@@ -89,12 +89,13 @@ Kui tegevus ebaõnnestus, siis vaadake **Sissetuleva dokumendi** kiirkaarti **T�
 Automaatseks ostuarve loomiseks tuleks seadistada BC töövoog, kasutades malli **Sissetulevate dokumentide edastuse töövoog** (Incoming Document Exchange Workflow).
 
 E-arvest ostuarve loomisel kasutatakse järgnevaid vastendusreegleid:
-1. Hankija tuvastatakse **Registreerimisnumbri** alusel. Hankija puudumisel on võimalus hankija automaatselt luua (eeldusel, et Riigid/regioonid tabelis on seadistatud Uue hankija mall) aga see ei ole soovituslik.
-2. **Kaubad** tuvastatakse järgnevas loogilises järjekorras: <br> 
-a) Ostja kaubakood (BC kauba nr.) <br>
-b) EAN (esmalt GTIN kauba kaardil, seejärel vöötkood ristviidetes) <br>
-c) Müüja kauba kood (ristviidetes)
-3. **Kulukontod ja dimensioonid** võetakse e-arvest juhul, kui need on seal olemas – st. konteerimine on tehtud operaatori arvehalduskeskkonnas.
+1. Hankija tuvastatakse **Registreerimisnumbri** alusel. <br>
+Hankija puudumisel on võimalus hankija automaatselt luua (eeldusel, et Riigid/regioonid tabelis on seadistatud Uue hankija mall) aga see ei ole soovituslik.
+2. **Kaubad** tuvastatakse ainult juhul kui **Aktiveeri kaupade tuvastamine e-arvelt** on aktiveeritud **Ostu ja ostuv. seadistus** lehel. <br>
+Kaubad tuvastatakse järgmises järjekorras: <br>
+a) EAN (esmalt GTIN kauba kaardil, seejärel vöötkood ristviidetes) <br>
+b) Müüja kauba kood (esmalt ristviidetes, seejärel BC kauba nr.) <br>
+3. **Kulukontod ja dimensioonid** võetakse e-arvest juhul, kui need on seal olemas – st. eelkonteerimine on tehtud operaatori arvehalduskeskkonnas.
 4. Kui konto e-arvel puudub, siis kasutatakse **Vastenda tekst kontoks** funktsionaalsust, kust kõigepealt otsitakse e-arve rea kirjeldusele vastet ning kui seda ei leita, siis hankija nimele vastavat seadistust. **NB! Vastendamises on lubatud filtri kujul seadistused.**
 5. Viimases järjekorras kasutatakse **Ostu ja ostuv. seadistus** lehel, **Vaikekontod** kiirkaardil määratud vaikekontosid.
 6. **KM toote konteeringurühm** võetakse e-arvelt (juhul, kui see on seal olemas). Viimase puudumisel kasutatakse leitud kauba või PR konto vastavat määrangut. <br> NB! Kui e-arvel on väiksem KM %, kui kauba või PR konto KM toote konteeringurühmal, leiab süsteem esimese KM toote konteeringurühma (*kombinatsioonis hankija pealt tuleva KM äri konteeringurühmaga*), millel on sama KM % kui e-arve real, ning kasutab seda.
