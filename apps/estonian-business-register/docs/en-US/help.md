@@ -1,7 +1,7 @@
 ---
 ---
 # Estonian Business Register - User Guide
-Estonian Business Register app adds **Registration No.** field to the customer and vendor data in Business Central and a functionality **Business Register Query**.
+Estonian Business Register app adds **Registration No.** field to the customer, vendor and contact table in Business Central and a functionality **Business Register Query**.
 
 ## Business Register Query
 Query from Business Register enables to make queries from Business Register free information service “Requisites XML Service” and “E-Invoice Register Service”. 
